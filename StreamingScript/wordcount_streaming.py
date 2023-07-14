@@ -21,7 +21,11 @@ lines_df = (
 
 # TRANSFORM
 words_df = lines_df.select(expr("explode(split(value, ' ')) as word"))
-counts_df = words_df.groupBy("word").count()  # shfflue 발생함
+words_df.createOrReplaceTempView("words")
+# words_df = lines_df.select("word").groupBy("word").count()
+
+# sql
+counts_df = spark.sql("SELECT word, COUNT(*) as count FROM words GROUP BY word")
 
 # SINK
 word_count_query = (
