@@ -34,7 +34,6 @@ kafka_df = (
     .option("startOffsets", "earliest")
     .load()
 )
-
 kafka_df.printSchema()
 
 
