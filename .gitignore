@@ -162,4 +162,4 @@ cython_debug/
 .vscode
 poetry.lock
 pyproject.toml
-apis/urls.conf
+SparkStreamingProject/apis/urls.conf
