@@ -98,12 +98,12 @@ services:
       - zoo3
   
   postgresql:
-    extend:
+    extends:
       service: postgresql
       file: conduktor.yml
   
   conduktor:
-    extend:
+    extends:
       service: conduktor-platform
       file: conduktor.yml
   
